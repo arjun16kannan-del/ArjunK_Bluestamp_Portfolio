@@ -47,12 +47,6 @@ Second milestone: Sensor integration and line following
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/CaCazFBhYKs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-First milestone: Building the robot and basic movements
-- An explanation about the different components of your project and how they will all integrate together
-- Technical progress you've made so far
-- Challenges you're facing and solving in your future milestones
-- What your plan is to complete your project
-
   For my first milestone, I focused on building the robot and setting up the basic components needed for movement. 
 
   The main component is the Arduino Uno R3, which acts as the brain of the robot by running the code and controlling all other parts. To power and control the motors, I used an L9110 motor driver module, which allows the Arduino to safely control the direction and speed of the motors using power from the battery pack. The DC motors and wheels enable the robot to move, while the battery provides the necessary power for the entire system. I also added a line tracking module, which uses infrared sensors to detect the difference between a black line and a lighter surface, allowing the robot to eventually follow a path. A mini breadboard was used to organize and simplify the wiring connections between components.
