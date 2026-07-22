@@ -78,7 +78,7 @@ Don't forget to place the link of where to buy each component inside the quotati
 
 | **Part** | **Note** | **Price** | **Link** |
 |:--:|:--:|:--:|:--:|
-| Sunfounder 3 in 1 IoT/Smartcar/Basic projects | The core foundation of the robot | $69.99 | <a href="https://www.sunfounder.com/products/sunfounder-3-in-1-iot-smart-car-learning-ultimate-starter-kit"> Link </a> |
+| Sunfounder 3 in 1 IoT/Smartcar/Basic kit | The core foundation of the robot | $59.99 | <a href="https://www.amazon.com/gp/product/B0B778L1DZ?&linkCode=sl2&tag=sunfounder03-20&linkId=e800c059a16f6cb84ff3dd1e1220cd52&language=en_US&ref_=as_li_ss_tl"> Link </a> |
 
 
 # Other Resources/Examples
