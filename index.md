@@ -60,16 +60,51 @@ Here's where you'll put images of your schematics. [Tinkercad](https://www.tinke
 Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. 
 
 ```c++
+const int A_1B = 5;
+const int A_1A = 6;
+const int B_1B = 9;
+const int B_1A = 10;
+
+const int lineTrack = 2;
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
-  Serial.println("Hello World!");
+   //motor
+  pinMode(A_1B, OUTPUT);
+  pinMode(A_1A, OUTPUT);
+  pinMode(B_1B, OUTPUT);
+  pinMode(B_1A, OUTPUT);
+  //line track
+  pinMode(lineTrack, INPUT);
+
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
+int speed = 150;
 
+  int lineColor = digitalRead(lineTrack); // 0:white  1:black
+  Serial.println(lineColor); //print on the serial monitor
+  if (lineColor) {
+    moveLeft(speed);
+  } else {
+    moveRight(speed);
+  }
 }
+void moveLeft(int speed) {
+  analogWrite(A_1B, 0);
+  analogWrite(A_1A, speed);
+  analogWrite(B_1B, 0);
+  analogWrite(B_1A, 0);
+}
+
+void moveRight(int speed) {
+  analogWrite(A_1B, 0);
+  analogWrite(A_1A, 0);
+  analogWrite(B_1B, speed);
+  analogWrite(B_1A, 0);
+}
+
 ```
 
 # Bill of Materials
