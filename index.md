@@ -55,7 +55,7 @@ Second milestone: Sensor integration and line following
   So far, I have successfully built the foundation of the robot, mounted the main parts, and completed much of the wiring between the Arduino, motor driver, motors, battery, and sensor. One challenge I am facing is that this is my first time doing this type of wiring, so it has been difficult to make sure all connections are correct and properly integrated without errors. I am also still learning how the wiring connects to the code, which makes debugging errors more challenging. For the next milestone, my plan is to focus on sensor integration and coding by testing the line tracking module, writing code that interprets its input, and connecting that data to motor control so the robot can actually follow a line.
 # Schematics 
 Here's where you'll put images of your schematics. [Tinkercad](https://www.tinkercad.com/blog/official-guide-to-tinkercad-circuits) and [Fritzing](https://fritzing.org/learning/) are both great resoruces to create professional schematic diagrams, though BSE recommends Tinkercad becuase it can be done easily and for free in the browser. 
-
+!(car_4.webp)
 # Code
 Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. 
 
