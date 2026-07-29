@@ -66,31 +66,114 @@ const int B_1B = 9;
 const int B_1A = 10;
 
 const int lineTrack = 2;
+
+const int rightIR = 7;
+const int leftIR = 8;
+
+const int trigPin = 3;
+const int echoPin = 4;
+
+bool turning = false;
+bool followRight = true;
+
 void setup() {
-  // put your setup code here, to run once:
   Serial.begin(9600);
-   //motor
+
   pinMode(A_1B, OUTPUT);
   pinMode(A_1A, OUTPUT);
   pinMode(B_1B, OUTPUT);
   pinMode(B_1A, OUTPUT);
-  //line track
-  pinMode(lineTrack, INPUT);
 
+  pinMode(lineTrack, INPUT);
+  pinMode(leftIR, INPUT);
+  pinMode(rightIR, INPUT);
+
+  pinMode(trigPin, OUTPUT);
+  pinMode(echoPin, INPUT);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-int speed = 150;
+  int speed = 130;
 
-  int lineColor = digitalRead(lineTrack); // 0:white  1:black
-  Serial.println(lineColor); //print on the serial monitor
-  if (lineColor) {
-    moveLeft(speed);
+  int lineColor = digitalRead(lineTrack);
+  int left = digitalRead(leftIR);
+  int right = digitalRead(rightIR);
+  float distance = readSensorData();
+
+  if (!turning && ((distance > 5 && distance < 8) || (!left || !right))) {
+    turning = true;
+
+    stopMove();
+    delay(150);
+
+    moveBackward(130);
+    delay(300);
+
+    turnAround();
+
+    followRight = !followRight;
+
+    moveForward(130);
+    delay(200);
+
+    turning = false;
+    return;
+  }
+
+  if (followRight) {
+    if (lineColor == 1) {
+      moveLeft(speed);
+    } else {
+      moveRight(speed);
+    }
   } else {
-    moveRight(speed);
+    if (lineColor == 1) {
+      moveRight(speed);
+    } else {
+      moveLeft(speed);
+    }
   }
 }
+
+float readSensorData() {
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+
+  digitalWrite(trigPin, LOW);
+
+  float duration = pulseIn(echoPin, HIGH, 30000);
+  float distance = duration / 58.0;
+
+  return distance;
+}
+
+void turnAround() {
+  analogWrite(A_1A, 120);
+  analogWrite(A_1B, 0);
+  analogWrite(B_1A, 120);
+  analogWrite(B_1B, 0);
+
+  delay(700);
+  stopMove();
+}
+
+void moveForward(int speed) {
+  analogWrite(A_1B, 0);
+  analogWrite(A_1A, speed);
+  analogWrite(B_1B, speed);
+  analogWrite(B_1A, 0);
+}
+
+void moveBackward(int speed) {
+  analogWrite(A_1B, speed);
+  analogWrite(A_1A, 0);
+  analogWrite(B_1B, 0);
+  analogWrite(B_1A, speed);
+}
+
 void moveLeft(int speed) {
   analogWrite(A_1B, 0);
   analogWrite(A_1A, speed);
@@ -102,6 +185,13 @@ void moveRight(int speed) {
   analogWrite(A_1B, 0);
   analogWrite(A_1A, 0);
   analogWrite(B_1B, speed);
+  analogWrite(B_1A, 0);
+}
+
+void stopMove() {
+  analogWrite(A_1B, 0);
+  analogWrite(A_1A, 0);
+  analogWrite(B_1B, 0);
   analogWrite(B_1A, 0);
 }
 
