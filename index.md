@@ -35,7 +35,7 @@ For your final milestone, explain the outcome of your project. Key details to in
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/y3VAmNlER5Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-For my second milestone, I integrated sensors and implemented line-following behavior. Using an IR sensor, the robot detects the line and adjusts its motors to stay on track. I also added an IR obstacle sensor for short-range detection and an ultrasonic sensor for longer-range sensing, bringing the robot closer to operating autonomously.
+For my second milestone, I integrated sensors and implemented line-following behavior. Using an IR sensor, the robot detects the line and adjusts its motors to stay on track. I also added an IR obstacle sensor and an ultrasonic sensor for detecting objects both to the side and infront of the robot.
 
 One surprising part was how important hardware calibration is. My code initially didn’t work, but after adjusting the sensor’s potentiometer, the robot followed the line smoothly.
 
