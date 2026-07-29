@@ -35,11 +35,13 @@ For your final milestone, explain the outcome of your project. Key details to in
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/y3VAmNlER5Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-Second milestone: Sensor integration and line following
-- Technical details of what you've accomplished and how they contribute to the final goal
-- What has been surprising about the project so far
-- Previous challenges you faced that you overcame
-- What needs to be completed before your final milestone 
+For my second milestone, I integrated sensors and implemented line-following behavior. Using an IR sensor, the robot detects the line and adjusts its motors to stay on track. I also added an IR obstacle sensor for short-range detection and an ultrasonic sensor for longer-range sensing, bringing the robot closer to operating autonomously.
+
+One surprising part was how important hardware calibration is. My code initially didn’t work, but after adjusting the sensor’s potentiometer, the robot followed the line smoothly.
+
+A key challenge was debugging whether issues were caused by code or hardware. I also changed my original obstacle plan—rather than navigating around objects, the robot now performs a 180-degree turn when it detects one, which is more reliable.
+
+Before the final milestone, I need to improve turning accuracy, make obstacle detection more consistent, and better integrate all components
 
 # First Milestone
 
