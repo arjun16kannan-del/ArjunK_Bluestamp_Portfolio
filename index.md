@@ -41,7 +41,7 @@ One surprising part was how important hardware calibration is. My code initially
 
 A key challenge was debugging whether issues were caused by code or hardware. I also changed my original obstacle plan—rather than navigating around objects, the robot now performs a 180-degree turn when it detects one, which is more reliable.
 
-Before the final milestone, I need to improve turning accuracy, make obstacle detection more consistent, and better integrate all components
+Before the final milestone, I plan on improving the turning accuracy, make obstacle detection more consistent, and better integrating all the components.
 
 # First Milestone
 
