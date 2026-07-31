@@ -210,4 +210,4 @@ void stopMove() {
 - [Sunfounder kit videos](https://www.youtube.com/playlist?list=PLwWF-ICTWmB5H8BlYGgbQDTb6MeoAG9jZ)
 - [Example 3](https://arneshkumar.github.io/arneshbluestamp/)
 
-To watch the BSE tutorial on how to create a portfolio, click here.
+T
