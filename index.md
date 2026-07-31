@@ -56,6 +56,10 @@ Before the final milestone, I plan on improving the turning accuracy, make obsta
 # Code
 
 ```c++
+#include <IRremote.h>
+
+const int IR_RECEIVE_PIN = 12;
+
 const int A_1B = 5;
 const int A_1A = 6;
 const int B_1B = 9;
@@ -72,6 +76,8 @@ const int echoPin = 4;
 bool turning = false;
 bool followRight = true;
 
+int speed = 130;
+
 void setup() {
   Serial.begin(9600);
 
@@ -86,10 +92,13 @@ void setup() {
 
   pinMode(trigPin, OUTPUT);
   pinMode(echoPin, INPUT);
+
+  IrReceiver.begin(IR_RECEIVE_PIN, ENABLE_LED_FEEDBACK);
 }
 
 void loop() {
-  int speed = 130;
+
+  handleRemote();
 
   int lineColor = digitalRead(lineTrack);
   int left = digitalRead(leftIR);
@@ -102,14 +111,14 @@ void loop() {
     stopMove();
     delay(150);
 
-    moveBackward(130);
+    moveBackward(speed);
     delay(300);
 
-    turnAround();
+    turnAround(speed);
 
     followRight = !followRight;
 
-    moveForward(130);
+    moveForward(speed);
     delay(200);
 
     turning = false;
@@ -131,6 +140,28 @@ void loop() {
   }
 }
 
+void handleRemote() {
+  if (IrReceiver.decode()) {
+    String key = decodeKeyValue(IrReceiver.decodedIRData.command);
+
+    if (key == "+") {
+      speed += 15;
+    } else if (key == "-") {
+      speed -= 15;
+    } else if (key == "POWER") {
+      stopMove();
+    }
+
+    if (speed > 255) speed = 255;
+    if (speed < 80) speed = 80;
+
+    Serial.print("Speed: ");
+    Serial.println(speed);
+
+    IrReceiver.resume();
+  }
+}
+
 float readSensorData() {
   digitalWrite(trigPin, LOW);
   delayMicroseconds(2);
@@ -146,13 +177,15 @@ float readSensorData() {
   return distance;
 }
 
-void turnAround() {
-  analogWrite(A_1A, 120);
+void turnAround(int speed) {
+  analogWrite(A_1A, speed);
   analogWrite(A_1B, 0);
-  analogWrite(B_1A, 120);
+
+  analogWrite(B_1A, speed);
   analogWrite(B_1B, 0);
 
-  delay(700);
+  delay(1200);
+
   stopMove();
 }
 
@@ -189,6 +222,15 @@ void stopMove() {
   analogWrite(A_1A, 0);
   analogWrite(B_1B, 0);
   analogWrite(B_1A, 0);
+}
+
+String decodeKeyValue(long result) {
+  switch(result){
+    case 0x9: return "+";
+    case 0x15: return "-";
+    case 0x45: return "POWER";
+    default: return "ERROR";
+  }
 }
 
 ```
