@@ -1,6 +1,5 @@
 # Line Following Robot
-Replace this text with a brief description (2-3 sentences) of your project. This description should draw the reader in and make them interested in what you've built. You can include what the biggest challenges, takeaways, and triumphs from completing the project were. As you complete your portfolio, remember your audience is less familiar than you are with all that your project entails!
-
+This robot is designed to follow lines, avoid obstacles on its path, and adjust its speed based on what I desire. The brain of the robot is an Arduino board, which controls the motors, the line tracker module, which keeps the robot following the black line, two obstacle detection modules and an ultrasonic sensor for obstacle avoidance, and an IR receiver for remote control actions.
 You should comment out all portions of your portfolio that you have not completed yet, as well as any instructions:
 ```HTML 
 <!--- This is an HTML comment in Markdown -->
