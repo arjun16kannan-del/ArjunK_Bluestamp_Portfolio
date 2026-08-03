@@ -1,10 +1,7 @@
 # Line Following Robot
 This robot is designed to follow lines, avoid obstacles on its path, and adjust its speed based on what I desire. The brain of the robot is an Arduino board, which controls the motors, the line tracker module, which keeps the robot following the black line, two obstacle detection modules and an ultrasonic sensor for obstacle avoidance, and an IR receiver for remote control actions.
 You should comment out all portions of your portfolio that you have not completed yet, as well as any instructions:
-```HTML 
-<!--- This is an HTML comment in Markdown -->
-<!--- Anything between these symbols will not render on the published site -->
-```
+
 
 | **Engineer** | **School** | **Area of Interest** | **Grade** |
 |:--:|:--:|:--:|:--:|
