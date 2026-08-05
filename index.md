@@ -248,6 +248,6 @@ String decodeKeyValue(long result) {
 # Other Resources/Examples
 - [SunFounder kit guide](https://docs.sunfounder.com/projects/3in1-kit-v2/en/latest/car_project/car_line_track.html)
 - [Sunfounder kit videos](https://www.youtube.com/playlist?list=PLwWF-ICTWmB5H8BlYGgbQDTb6MeoAG9jZ)
-- [Example 3](https://arneshkumar.github.io/arneshbluestamp/)
+
 
 
