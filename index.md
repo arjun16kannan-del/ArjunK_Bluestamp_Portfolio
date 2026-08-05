@@ -14,8 +14,7 @@ You should comment out all portions of your portfolio that you have not complete
 # Final Milestone
 
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/F7M7imOVGug" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/oP5R0D87xwQ?si=qUJ7sPgmgd7a9bnC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
   Since my previous milestone, I improved my robot by finalizing obstacle detection and adding a remote control feature to adjust its speed. The robot can now detect obstacles using infrared and ultrasonic sensors, perform a 180-degree turn, and continue following the line in the opposite direction.
 
 My biggest challenge  was debugging the obstacle detection system. The robot initially gave false readings, then failed to detect objects, and later had issues completing turns. Solving these problems required extensive testing, and I learned that some issues were caused by hardware, especially battery power affecting performance. Getting everything to work consistently was a major success.
